@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Interactive Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.5s;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Fun Site!</h1>
+        <button id="funButton">Click Me for a Fun Fact!</button>
+        <p id="factDisplay" class="hidden"></p>
+    </div>
+    <script>
+        const funButton = document.getElementById('funButton');
+        const factDisplay = document.getElementById('factDisplay');
+
+        const funFacts = [
+            "Honey never spoils.",
+            "Octopuses have three hearts.",
+            "Bananas are berries, but strawberries aren't!",
+            "A group of flamingos is called a 'flamboyance.'",
+            "You can't hum while holding your nose."
+        ];
+
+        funButton.addEventListener('click', () => {
+            // Change background color
+            document.body.style.backgroundColor = getRandomColor();
+
+            // Display a fun fact
+            const randomIndex = Math.floor(Math.random() * funFacts.length);
+            factDisplay.textContent = funFacts[randomIndex];
+            factDisplay.classList.remove('hidden');
+        });
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>
