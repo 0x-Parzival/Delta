@@ -3,53 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Table</title>
+    <title>Registration Form</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
         table {
             width: 100%;
+            max-width: 500px;
+            margin: auto;
             border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+        #heading {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        td {
+            padding: 10px;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
+        input[type="text"], input[type="password"], input[type="file"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-direction: column;
         }
     </style>
 </head>
 <body>
-
-<h2>Project Information</h2>
-
-<table>
-    <tr>
-        <th>Index Number</th>
-        <th>Project Name</th>
-        <th>Description</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td><a href="aech.html">Aech</a></td>
-        <td>A description of Aech.</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td><a href="Ae.html">Ae</a></td>
-        <td>A description of Ae.</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td><a href="Que.html">Que</a></td>
-        <td>A description of Que.</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td><a href="double-u.html">Double-U</a></td>
-        <td>A description of Double-U.</td>
-    </tr>
-</table>
-
+    <form action="">
+        <table border="2">
+            <tr>
+                <td colspan="2" id="heading">Registration Form</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" placeholder="Write your name" required></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" placeholder="Write your email" required></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" placeholder="Write your password" required></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea placeholder="Write your address" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Branch</td>
+                <td class="radio-group">
+                    <label><input type="radio" name="branch" value="CSE" required>CSE</label>
+                    <label><input type="radio" name="branch" value="CE">CE</label>
+                    <label><input type="radio" name="branch" value="CS">CS</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Languages</td>
+                <td class="checkbox-group">
+                    <label><input type="checkbox" name="language" value="C">C</label>
+                    <label><input type="checkbox" name="language" value="C++">C++</label>
+                    <label><input type="checkbox" name="language" value="C#">C#</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Upload Profile Picture</td>
+                <td><input type="file" required></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <select required>
+                        <option value="">Select your city</option>
+                        <option value="Ghaziabad">Ghaziabad</option>
+                        <option value="Noida">Noida</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>dob</td>
+                <td><input type="date"> </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
